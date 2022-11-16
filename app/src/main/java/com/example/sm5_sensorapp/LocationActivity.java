@@ -34,7 +34,7 @@ import java.util.concurrent.Future;
 
 public class LocationActivity extends AppCompatActivity {
 
-    private static final int REQUEST_LOCATION_PERMISSION = 18; //może to być każda liczba większa od 0
+    private static final int REQUEST_LOCATION_PERMISSION = 1; //może to być każda liczba większa od 0
 
     private Button getLocationButton;
 
@@ -65,7 +65,7 @@ public class LocationActivity extends AppCompatActivity {
     }
 
 
-    private void getLocation(){ //Metoda getLocation odpowiada za prośbę o pozwolenie typu ACCESS_FINE_LOCATION
+    private void getLocation(){
         if(ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -74,7 +74,6 @@ public class LocationActivity extends AppCompatActivity {
                     REQUEST_LOCATION_PERMISSION);
         }else {
             //Log.d(TAG,"getLocation: permissions granted");
-
             fusedLocationClient.getLastLocation().addOnSuccessListener(
                     location-> {
                         if (location != null) {
