@@ -1,6 +1,6 @@
 package com.example.sm5_sensorapp;
 
-import static pl.edu.pb.sensorapp.SensorDetailsActivity.EXTRA_SENSOR_TYPE_PARAMETER;
+import static com.example.sm5_sensorapp.SensorDetailsActivity.EXTRA_SENSOR_TYPE_PARAMETER;
 
 import android.content.Context;
 import android.content.Intent;
