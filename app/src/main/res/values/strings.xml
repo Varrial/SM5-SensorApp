@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">SM5 - SensorApp</string>
+    <string name="app_name">SensorApp</string>
+    <string name="sensors_count">Liczba czujników: %d</string>
+    <string name="show_subtitle">Pokaż ilość czujników</string>
+    <string name="hide_subtitle">Ukryj ilość czujników</string>
+    <string name="example_sensor_name">Jakaś nazwa sensora</string>
+    <string name="example_sensor_value">Jakaś wartość sensora</string>
+    <string name="missing_sensor">Brak sensora</string>
+    <string name="location_permission_denied">Odmowa dostępu do lokalizacji</string>
+    <string name="location_text">"Szerokość geograficzna: %1$.4f \n Długość geograficzna: %2$.4f \n Czas: %3$tr"</string>
+    <string name="no_location">Brak lokalizacji</string>
+    <string name="last_localization">Naciśnij przycisk aby pobrac ostatnią lokalizację</string>
+    <string name="address_text">"Adres: %1$s \n Czas: %2$tr"</string>
+    <string name="service_not_abailable">Nie dostępny"</string>
+    <string name="no_address_found">Nie znaleziono adresu</string>
+
 </resources>
