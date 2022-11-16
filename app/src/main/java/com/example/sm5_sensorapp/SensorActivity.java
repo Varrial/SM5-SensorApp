@@ -1,6 +1,6 @@
 package com.example.sm5_sensorapp;
 
-import static pl.edu.pb.sensorapp.SensorDetailsActivity.EXTRA_SENSOR_TYPE_PARAMETER;
+import static com.example.sm5_sensorapp.SensorDetailsActivity.EXTRA_SENSOR_TYPE_PARAMETER;
 
 import android.content.Context;
 import android.content.Intent;
@@ -25,19 +25,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class SensorActivity extends AppCompatActivity {
-    private SensorManager sensorManager;
-    private List<Sensor> sensorList;
-    private RecyclerView recyclerView;
-    private SensorAdapter adapter;
-    private static final String SENSOR_APP_TAG = "SENSOR_APP_TAG";
+//    Public
     public static final int SENSOR_DETAILS_ACTIVITY_REQUEST_CODE = 1;
     public static final int LOCATION_ACTIVITY_REQUEST_CODE = 1;
+
+//    Private
+    private SensorManager sensorManager;
+    private List<Sensor> sensorList;
+
+    private RecyclerView recyclerView;
+    private SensorAdapter adapter;
+
+    private static final String SENSOR_APP_TAG = "SENSOR_APP_TAG";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sensor_activity);
-
 
         recyclerView = findViewById(R.id.sensor_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -45,7 +50,7 @@ public class SensorActivity extends AppCompatActivity {
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorList = sensorManager.getSensorList(Sensor.TYPE_ALL);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { //wpisywanie do logów nazw czujników
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             sensorList.forEach(sensor -> {
                 Log.d(SENSOR_APP_TAG, "Sensor name:" + sensor.getName());
                 Log.d(SENSOR_APP_TAG, "Sensor vendor:" + sensor.getVendor());
